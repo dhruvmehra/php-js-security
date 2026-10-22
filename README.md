@@ -10,13 +10,13 @@ Ask in plain English, e.g. *"scan this repo"* or *"scan example.com and its subd
 
 **Option A: just for you**
 ```bash
-git clone <this-repo-url> ~/.claude/skills/php-js-security
+git clone https://github.com/dhruvmehra/php-js-security.git ~/.claude/skills/php-js-security
 ```
 
 **Option B: for everyone working in a repository.** Commit the skill into the repo:
 ```bash
 mkdir -p .claude/skills
-git clone <this-repo-url> .claude/skills/php-js-security
+git clone https://github.com/dhruvmehra/php-js-security.git .claude/skills/php-js-security
 rm -rf .claude/skills/php-js-security/.git
 git add .claude/skills/php-js-security && git commit -m "Add php-js-security skill"
 ```
