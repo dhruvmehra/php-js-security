@@ -1,0 +1,11 @@
+{
+  "name": "php-js-security",
+  "owner": { "name": "Dhruv Mehra" },
+  "plugins": [
+    {
+      "name": "php-js-security",
+      "source": "./",
+      "description": "PHP/JavaScript security scanning for code and websites, including subdomains and a PHP2Shell check."
+    }
+  ]
+}

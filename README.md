@@ -8,20 +8,28 @@ Ask in plain English, e.g. *"scan this repo"* or *"scan example.com and its subd
 
 ## Install
 
-**Option A: just for you**
-```bash
-git clone https://github.com/dhruvmehra/php-js-security.git ~/.claude/skills/php-js-security
+Type this inside Claude Code:
+
+```
+/plugin install php-js-security --marketplace dhruvmehra/php-js-security
 ```
 
-**Option B: for everyone working in a repository.** Commit the skill into the repo:
-```bash
-mkdir -p .claude/skills
-git clone https://github.com/dhruvmehra/php-js-security.git .claude/skills/php-js-security
-rm -rf .claude/skills/php-js-security/.git
-git add .claude/skills/php-js-security && git commit -m "Add php-js-security skill"
+That's it. It works on Claude Code 2.1.275 or later. On older versions, run these two commands instead:
+```
+/plugin marketplace add dhruvmehra/php-js-security
+/plugin install php-js-security@php-js-security
 ```
 
-Start a new Claude Code session after installing. Check that it's loaded by typing `/php-js-security`.
+Get updates with `/plugin marketplace update php-js-security`.
+
+<details>
+<summary>Manual install (without the plugin system)</summary>
+
+```bash
+git clone https://github.com/dhruvmehra/php-js-security.git /tmp/php-js-security
+cp -r /tmp/php-js-security/skills/php-js-security ~/.claude/skills/
+```
+</details>
 
 **Requirements:** Claude Code, Python 3.8+ (standard library only), `bash`, `curl`, `openssl`. Optional tools that are used if already installed (the skill never installs anything): `composer`, `npm`/`pnpm`/`yarn`, `semgrep`, `psalm`, `phpstan`.
 
@@ -90,7 +98,7 @@ php-fpm -v            # or: docker exec <container> php -v
 dpkg -l | grep php    # Debian/Ubuntu   (rpm -qa | grep php on RHEL)
 ```
 
-Paste the output into Claude and the skill will tell you whether you're affected. See [`references/php2shell.md`](references/php2shell.md) for log indicators and temporary mitigations.
+Paste the output into Claude and the skill will tell you whether you're affected. See [`references/php2shell.md`](skills/php-js-security/references/php2shell.md) for log indicators and temporary mitigations.
 
 ---
 
@@ -106,7 +114,7 @@ The skill runs four steps and reports a finding only if it survives all of them:
 ## Repository layout
 
 ```
-SKILL.md                         # Instructions Claude follows
+skills/php-js-security/SKILL.md  # Instructions Claude follows (references/ and scripts/ live beside it)
 references/
   php-checklist.md               # PHP vulnerability patterns: risky vs. safe code
   javascript-checklist.md        # JS/TS (server + browser) patterns
@@ -121,7 +129,7 @@ scripts/
   summarize.py                   # Combines results; flags affected PHP versions
 ```
 
-The scripts can also be run by hand, e.g. `python3 scripts/crawl_site.py https://example.com ./out --max-pages 20`.
+The scripts can also be run by hand, e.g. `python3 skills/php-js-security/scripts/crawl_site.py https://example.com ./out --max-pages 20`.
 
 ## Customizing
 
