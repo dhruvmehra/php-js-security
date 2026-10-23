@@ -37,7 +37,9 @@ cp -r /tmp/php-js-security/skills/php-js-security ~/.claude/skills/
 
 ## Usage
 
-Open Claude Code (inside your repo if you want code scanned) and ask:
+Open Claude Code (inside your repo if you want code scanned) and just ask in plain English, e.g. *"check if example.com is affected by PHP2Shell"*. Claude picks the skill automatically.
+
+You can also call it directly. With the plugin install the command is `/php-js-security:php-js-security`; with the manual install it's `/php-js-security`:
 
 | What you want | Say |
 |---|---|
