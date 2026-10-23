@@ -2,8 +2,17 @@
   "name": "php-js-security",
   "version": "1.0.0",
   "description": "PHP/JavaScript security scanning for code and websites, including subdomains and a PHP2Shell (CVE-2026-109618/109619) check.",
-  "author": { "name": "Dhruv Mehra" },
+  "author": {
+    "name": "Dhruv Mehra"
+  },
   "homepage": "https://github.com/dhruvmehra/php-js-security",
   "repository": "https://github.com/dhruvmehra/php-js-security",
-  "keywords": ["security", "php", "javascript", "php2shell", "appsec"]
+  "keywords": [
+    "security",
+    "php",
+    "javascript",
+    "php2shell",
+    "appsec"
+  ],
+  "license": "MIT"
 }

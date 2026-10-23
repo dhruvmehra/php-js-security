@@ -138,3 +138,7 @@ The scripts can also be run by hand, e.g. `python3 skills/php-js-security/script
 - **Crawl more pages:** ask for it ("crawl up to 200 pages per host"), or change `--max-pages` in `SKILL.md`.
 - **Add a new CVE:** add a reference file like `php2shell.md`, link it from `SKILL.md`, and add its fixed versions to `scripts/summarize.py`.
 - **Add checks:** extend the checklists in `references/`. Claude reads them at scan time.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
